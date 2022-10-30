@@ -181,6 +181,7 @@ def raw_data (df):
     """Displays the filtererd data 5 rows
     at a time each time enter is pressed"""
     print('Press enter to see row data, type no to skip')
+    pd.set_options('display.max_columns', 200) # all columns in DataFrame will be displayed
     x = 0
     while (input() != 'no'):
         x += 5
