@@ -28,6 +28,8 @@ def get_filters():
     # TO DO: get user input for month (all, january, february, ... , june)
     month = input("Which month would you like to look at?\nPlease type January, February.....June, or All: ")
     month = month.lower()
+    # check whether input for month is a valid value
+    # as long as value is not valid user will be asked to enter the required value until a correct calue is entered
     while month not in ["january", "february", "march", "april", "may", "june", "all"]:
         print("That was not a valid choice, please try again")
         month = input("Which month would you like to look at?\nPlease type January, February.....June, or All: ")
