@@ -16,11 +16,13 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    valid_cities = CITY_DATA.keys()
     city = input("Which city would you like to look at?\nPlease type Chicago, New York City or Washington: ")
     city = city.lower()
+
     # check whether the input for city is a valid value
     # as long as the value is not valid user will be asked to enter the required city again until a correct value is entered 
-    while city not in ["chicago", "new york city", "washington"]:    
+    while city not in valid_cities:
         print("That was not a valid city, please try again.")
         city = input("Which city would you like to look at?\nPlease type Chicago, New York City or Washington: ")
         
@@ -185,6 +187,7 @@ def raw_data (df):
     """Displays the filtererd data 5 rows
     at a time each time enter is pressed"""
     print('Press enter to see row data, type no to skip')
+    pd.set_options('display.max_columns', 200) # all columns in DataFrame will be displayed
     x = 0
     while (input() != 'no'):
         x += 5
